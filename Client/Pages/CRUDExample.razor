@@ -1,0 +1,92 @@
+﻿@page "/Crud"
+@using HomeProject.Shared.Entities
+@inject HttpClient Http
+
+<h3>Worker List</h3>
+@if (WorkersList.Count > 0)
+{
+<ul>
+    @foreach (Worker w in WorkersList)
+    {
+<li @onclick="() => selectWorker(w.ID)">@w.FullName , @w.Department , @w.Salary.ToString()</li>}
+</ul>       }
+
+<h3>Single Worker</h3>
+ID:
+<input type="text" @bind="singleWorker.ID" />
+<br />
+Name:
+<input type="text" @bind="singleWorker.FullName" />
+<br />
+Department:
+<input type="text" @bind="singleWorker.Department" />
+<br />
+Salary:
+<input type="number" @bind="singleWorker.Salary" />
+<br />
+
+<input type="button" value="Add" @onclick="CreateWorker" />
+<br />
+<input type="button" value="Delete Worker" @onclick="DeleteWorker" />
+<br />
+<input type="button" value="Update Worker" @onclick="UpdateWorker" />
+
+
+@code { List<Worker> WorkersList = new List<Worker>();
+    Worker singleWorker = new Worker();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var getResponse = await Http.GetAsync("api/Workers");
+
+        if (getResponse.IsSuccessStatusCode == true)
+        {
+            WorkersList = getResponse.Content.ReadFromJsonAsync<List<Worker>>().Result;
+        }
+
+    }
+
+    async Task selectWorker(int id)
+    {
+        var getResponse = await Http.GetAsync("api/Workers/" + id);
+        if (getResponse.IsSuccessStatusCode == true)
+        {
+            singleWorker = getResponse.Content.ReadFromJsonAsync<Worker>().Result;
+        }
+    }
+
+    async Task CreateWorker()
+    {
+        var postResponse = await Http.PostAsJsonAsync("api/Workers/insert", singleWorker);
+        if (postResponse.IsSuccessStatusCode == true)
+        {
+            Worker myNewWorker = postResponse.Content.ReadFromJsonAsync<Worker>().Result;
+            WorkersList.Add(myNewWorker);
+            singleWorker = new Worker();
+        }
+    }
+
+    async Task DeleteWorker()
+    {
+        var DeleteResponse = await Http.DeleteAsync("api/Workers/" + singleWorker.ID);
+        bool isDeleted = DeleteResponse.Content.ReadFromJsonAsync<bool>().Result;
+
+        if (isDeleted == true && DeleteResponse.IsSuccessStatusCode == true)
+        {
+            WorkersList.RemoveAll(w => w.ID == singleWorker.ID);
+            singleWorker = new Worker();
+        }
+    }
+    async Task UpdateWorker()
+    {
+        var UpdateResponse = await Http.PostAsJsonAsync("api/Workers/Update", singleWorker);
+        if (UpdateResponse.IsSuccessStatusCode == true)
+        {
+            Worker UpdatedWorker = UpdateResponse.Content.ReadFromJsonAsync<Worker>().Result;
+            int IndexOfWorker = WorkersList.FindIndex(w => w.ID == singleWorker.ID);
+            WorkersList[IndexOfWorker] = UpdatedWorker;
+
+            singleWorker = new Worker();
+        }
+    }
+}

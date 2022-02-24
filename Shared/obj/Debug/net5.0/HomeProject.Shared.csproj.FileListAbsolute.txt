@@ -1,0 +1,12 @@
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\bin\Debug\net5.0\HomeProject.Shared.deps.json
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\bin\Debug\net5.0\HomeProject.Shared.dll
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\bin\Debug\net5.0\ref\HomeProject.Shared.dll
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\bin\Debug\net5.0\HomeProject.Shared.pdb
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.AssemblyInfoInputs.cache
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.AssemblyInfo.cs
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.dll
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\ref\HomeProject.Shared.dll
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.pdb
+C:\Users\ShaharMC\OneDrive\Documents\טלמ\שנה ב'\תכנות\project\HomeProject\HomeProject\Shared\obj\Debug\net5.0\HomeProject.Shared.csproj.AssemblyReference.cache
